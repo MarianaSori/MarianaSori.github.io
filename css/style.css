@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #dcdce1;
+  color: #474d69;
+  font-family: "Montserrat", sans-serif;
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Merriweather", sans-serif;
+  margin: 0;
+}
+
+.hov {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+.hov::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(122, 199, 133);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.6s ease-out;
+}
+
+.hov:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+img {
+  width: 100%;
+}
+
+.row-style {
+  position: relative;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.row-style::before {
+  border-radius: 10px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to top left,
+    transparent 50%,
+    #90f9c4 110%,
+    #39f3bb 100%
+  );
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.row-style::after {
+  border-radius: 10px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    transparent 50%,
+    #90f9c4 110%,
+    #39f3bb 100%
+  );
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.row-style:hover::before {
+  opacity: 0;
+}
+
+.row-style:hover::after {
+  opacity: 1;
+}
+.colm {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+  background-color: #e8e7ef;
+  padding-left: 35px;
+}
+
+.mcolor {
+  background-color: #e8e7ef;
+  z-index: 2;
+}
+
+.size {
+  height: 90.5%;
+}
+
+.title {
+  font-size: 3.3em;
+  color: rgb(77, 168, 77);
+  padding-left: 25px;
+}
+
+.title1 {
+  font-size: 1.8em;
+  color: #5bbe86;
+  font-family: "Montserrat", sans-serif;
+  padding: 30px 30px 35px 30px;
+}
+
+.content1 {
+  padding-left: 30px;
+  margin-left: 35px;
+  border-left: solid 3px rgb(54, 50, 140);
+}
+
+@media (min-width: 768px) {
+  .title1 {
+    padding: 30px 30px 60px 30px;
+  }
+}
+.projects {
+  border-left: solid teal;
+  padding-left: 10px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    margin-bottom: 25px;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding-bottom: 8px;
+}
+
+.highlight {
+  color: darkcyan;
+}
+
+.wavea {
+  color: rgb(91, 190, 134);
+  position: absolute;
+}
+
+.wave {
+  color: darkcyan;
+  animation: wave 2s ease-in-out infinite;
+  transition: 1s;
+  cursor: pointer;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 47%,
+      10% 48%,
+      33% 54%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 58%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
